@@ -1509,6 +1509,7 @@
         },
         {
             "name": "league/commonmark",
+<<<<<<< HEAD
             "version": "2.5.0",
             "source": {
                 "type": "git",
@@ -1519,6 +1520,18 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/thephpleague/commonmark/zipball/0026475f5c9a104410ae824cb5a4d63fa3bdb1df",
                 "reference": "0026475f5c9a104410ae824cb5a4d63fa3bdb1df",
+=======
+            "version": "2.4.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/thephpleague/commonmark.git",
+                "reference": "b7a7af3a23a818dcc5836e62e93e4b9ce4704481"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/thephpleague/commonmark/zipball/b7a7af3a23a818dcc5836e62e93e4b9ce4704481",
+                "reference": "b7a7af3a23a818dcc5836e62e93e4b9ce4704481",
+>>>>>>> 2b0f0e15db7f4083f8d4bee12e787c0c7c7aebd3
                 "shasum": ""
             },
             "require": {
@@ -1531,8 +1544,13 @@
             },
             "require-dev": {
                 "cebe/markdown": "^1.0",
+<<<<<<< HEAD
                 "commonmark/cmark": "0.31.0",
                 "commonmark/commonmark.js": "0.31.0",
+=======
+                "commonmark/cmark": "0.30.3",
+                "commonmark/commonmark.js": "0.30.0",
+>>>>>>> 2b0f0e15db7f4083f8d4bee12e787c0c7c7aebd3
                 "composer/package-versions-deprecated": "^1.8",
                 "embed/embed": "^4.4",
                 "erusev/parsedown": "^1.0",
@@ -1611,7 +1629,11 @@
                     "type": "tidelift"
                 }
             ],
+<<<<<<< HEAD
             "time": "2024-07-22T18:18:14+00:00"
+=======
+            "time": "2024-07-22T12:31:21+00:00"
+>>>>>>> 2b0f0e15db7f4083f8d4bee12e787c0c7c7aebd3
         },
         {
             "name": "league/config",
