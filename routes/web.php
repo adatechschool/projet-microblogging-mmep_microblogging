@@ -20,7 +20,7 @@ Route::get('/', function () {
 }); 
 
 //route pour voir les posts
-Route::get('/posts/{id}',[PostController::class,"show"])->name('posts.show');
+Route::get('/post/{id}',[PostController::class,"show"])->name('posts.show');
 
 
 //route index
