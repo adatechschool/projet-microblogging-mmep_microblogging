@@ -7,15 +7,16 @@ use App\Models\Post;
 
 class PostController extends Controller
 {
+    // Montre 1 post suivant l'id
     public function show($id){
-        $post = Post::find("User")::findOrFail($id);
-        return view("post.show", compact("post"));
+        $post = Post::find($id)::findOrFail($id);
+        return view("pages.post", compact("post"));
     }
 
     //afficher tous les posts
     public function index(){
         $posts = Post::all();
-        return view("pages.index", compact ("posts"));
+        return view("pages.index", compact("posts"));
     }
     
 }
