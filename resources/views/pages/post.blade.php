@@ -7,7 +7,7 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>ici la page qui montre 1 post</h1>
+    <h1>ici la page qui montre 1 post id:{{$post->id}}</h1>
     <p>{{$post}}</p>
 </body>
 </html>
