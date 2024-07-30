@@ -14,7 +14,7 @@
     
     @foreach ($posts as $post)
     @if($post->user_id == $user->id)
-    <div>TITLE: {{$post->title}}</div
+    <div>TITLE: {{$post->title}}</div>
         @endif
         @endforeach
 </div>
