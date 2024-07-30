@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -19,17 +20,23 @@ Route::get('/', function () {
     return view('welcome');
 }); 
 
-//route pour voir les posts
-Route::get('/post/{id}',[PostController::class,"show"])->middleware(['auth', 'verified']);
 
+// ======== POSTS ===========
+Route::get('/post/{id}',[PostController::class,"show"])->middleware(['auth', 'verified']);
 //route index
 Route::get('/index', [PostController::class,"index"])->middleware(['auth', 'verified']);
  
+// ========== USERS ===========
+Route::get('/myprofile', [UserController::class, "show"])->middleware(['auth', 'verified']);
+Route::get("/myprofile/edit", [UserController::class,"edit"])->middleware(['auth', 'verified']);
+Route::get('/users', [UserController::class,'index'])->middleware(['auth', 'verified']);
 
+// ========== DASHBOARD ===========
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
+// ==== PROFILE EDITS, ADMIN ==========
  Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
