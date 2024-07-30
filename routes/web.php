@@ -20,21 +20,20 @@ Route::get('/', function () {
 }); 
 
 //route pour voir les posts
-Route::get('/post/{id}',[PostController::class,"show"])->name('posts.show');
-
+Route::get('/post/{id}',[PostController::class,"show"])->middleware(['auth', 'verified']);
 
 //route index
-Route::get('/index', [PostController::class,"index"]);
+Route::get('/index', [PostController::class,"index"])->middleware(['auth', 'verified']);
  
 
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
-/* Route::middleware('auth')->group(function () {
+ Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
-}); */
+}); 
 
 require __DIR__.'/auth.php';

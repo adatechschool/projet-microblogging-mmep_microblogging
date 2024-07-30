@@ -19,7 +19,8 @@ class UserSeeder extends Seeder
      User::create([
         "name"=> Str::random(10),
         "email"=> Str::random(10)."@osef.org",
-        "password"=> Hash::make("password")
+        "password"=> Hash::make("password"),
+        "biography"=>Str::random(10),
      ]);
     }
 }
