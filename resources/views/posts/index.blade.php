@@ -8,6 +8,7 @@
 </head>
 <body>
     <h1>ici la page qui montre tous les posts</h1>
-    <p>{{$posts[0]}}</p>
+    {{-- <p>{{$posts[0]}}</p> --}}
+    <p>{{$posts}}</p>
 </body>
 </html>
