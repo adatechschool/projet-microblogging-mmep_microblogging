@@ -36,7 +36,7 @@ class UserController extends Controller
         $request->user()->fill($request->validated());
         $request->user()->save();
 
-        return Redirect::route('user.edit')->with('status', 'profile-updated');
+        return Redirect::route('user.profile')->with('status', 'profile-updated');
     }
 
     public function destroy( ){}

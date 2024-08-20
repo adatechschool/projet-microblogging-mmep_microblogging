@@ -27,7 +27,7 @@ Route::get('/post/{id}',[PostController::class,"show"])->middleware(['auth', 've
 Route::get('/index', [PostController::class,"index"])->middleware(['auth', 'verified']);
  
 // ========== USERS ===========
-Route::get('/myprofile', [UserController::class, "show"])->middleware(['auth', 'verified']);
+Route::get('/myprofile', [UserController::class, "show"])->middleware(['auth', 'verified'])->name("user.profile");
 Route::get("/myprofile/edit", [UserController::class,"edit"])->middleware(['auth', 'verified'])->name("user.edit");
 Route::patch("/myprofile/edit", [UserController::class,"update"])->middleware(['auth', 'verified'])->name("user.update");
 Route::get('/users', [UserController::class,'index'])->middleware(['auth', 'verified']);
