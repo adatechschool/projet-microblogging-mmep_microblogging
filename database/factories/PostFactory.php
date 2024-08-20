@@ -19,7 +19,7 @@ class PostFactory extends Factory
     {
         return [
             "user_id"=> User::factory(),
-            "title"=> $this->faker->sentence(3),
+           /*  "title"=> $this->faker->sentence(3), */
             "content"=> $this->faker->paragraph(3),
             "image"=> $this->faker->imageUrl(),
         ];

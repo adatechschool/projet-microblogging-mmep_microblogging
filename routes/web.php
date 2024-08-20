@@ -23,9 +23,11 @@ Route::get('/', function () {
 
 
 // ======== POSTS ===========
-Route::get('/post/{id}',[PostController::class,"show"])->middleware(['auth', 'verified']);
-//route index
+/* Route::get('/post/{id}',[PostController::class,"show"])->middleware(['auth', 'verified']);
+ *///route index
 Route::get('/index', [PostController::class,"index"])->middleware(['auth', 'verified']);
+Route::get('/post/new', [PostController::class,"create"])->middleware(['auth', 'verified']);
+Route::post('/post/prout',[PostController::class,"store"])->middleware(['auth', 'verified'])->name("post.create");
  
 // ========== USERS ===========
 Route::get('/myprofile', [UserController::class, "show"])->middleware(['auth', 'verified'])->name("user.profile");

@@ -29,11 +29,22 @@ class PostController extends Controller
     public function store(Request $request) {
         
         // Validation des champs de la requête
+/*         $request->fill(["used_id"=>$request->user()->id]);
+ */
         $validatedData = $request->validate([
-            'title'=>'required|min:2|max:255',
-            'content'=>'required|min:10',
-            'image'=> 'nullable',
-        ]);
+            'content'=>'min:10',
+            'image' => 'required|image|mimes:png,jpg,jpeg|max:2048',
+     
+                ]);
+        
+            $validatedData['user_id'] = $request->user()->id;
+         
+        $imageName = time().'.'.$request->image->extension();
+
+        // Public Folder
+        $request->image->move(public_path('images'), $imageName);
+
+        
         $post = Post::create($validatedData);
 
         // On précise la redirection pour la route, 
@@ -52,7 +63,7 @@ class PostController extends Controller
             
             // Validation de request
             $validatedData = $request->validate([
-                'title'=>'required|min:2|max:255',
+
                 'content'=>'required|min:10',
                 'image'=> 'nullable',
             ]);
