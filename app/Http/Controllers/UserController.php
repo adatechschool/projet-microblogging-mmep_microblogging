@@ -25,8 +25,6 @@ class UserController extends Controller
         return view("users.show",compact("user"));
     }
 
-    // public function update(){}
-
     public function edit(){
         $user=Auth::user();
         return view("users.edit",compact("user"));

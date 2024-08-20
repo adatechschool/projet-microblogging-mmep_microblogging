@@ -3,6 +3,7 @@
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\ImageController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -43,5 +44,12 @@ Route::get('/dashboard', function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 }); 
+
+// ===== IMAGES UPLOAD =====
+Route::controller(ImageController::class)->group(function(){
+    Route::get('/image-upload', 'index')->name('image.form');
+    Route::post('/upload-image', 'storeImage')->name('image.store');
+    Route::patch("/image-patch","update")->name("image.update");
+});
 
 require __DIR__.'/auth.php';
