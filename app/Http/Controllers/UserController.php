@@ -18,7 +18,7 @@ class UserController extends Controller
         $users=User::all();
         $posts=Post::all();
 
-        return view("users.index",compact("users"))->with('posts',$posts);
+        return view("users.index",compact('users'))->with('posts',$posts);
     }
     public function show(){
         $user = Auth::user();

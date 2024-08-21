@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Post;
+use App\Models\User;
+use Illuminate\Support\Facades\Auth;
 
 class PostController extends Controller
 {
@@ -16,7 +18,8 @@ class PostController extends Controller
     //afficher tous les posts
     public function index(){
         $posts = Post::all();
-        return view("posts.index", compact("posts"));
+        $user = Auth::user();
+        return view("posts.index", compact("posts"))->with('user',$user);
     }
     
     // formulaire de creation d'un Post
