@@ -6,3 +6,4 @@
 {{-- <h1>Bio: {{$user->biography}}</h1> --}}
 <p>{{$user}}</p>
 <img src={{asset("images/".$user->profile_picture)}} alt="osef">
+<div>{{$posts}}</div>

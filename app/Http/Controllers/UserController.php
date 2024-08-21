@@ -22,7 +22,8 @@ class UserController extends Controller
     }
     public function show(){
         $user = Auth::user();
-        return view("users.show",compact("user"));
+        $posts=Post::query()->where('user_id',Auth::user()->id)->get();
+        return view("users.show",compact("user","posts"));
     }
 
     public function edit(){

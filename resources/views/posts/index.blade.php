@@ -10,5 +10,12 @@
     <h1>ici la page qui montre tous les posts</h1>
     {{-- <p>{{$posts[0]}}</p> --}}
     <p>{{$posts}}</p>
+
+    @foreach ($posts as $post)
+    <img src={{{ asset('images/'.$post->image) }}} alt="">
+    @endforeach
+
+
+
 </body>
 </html>

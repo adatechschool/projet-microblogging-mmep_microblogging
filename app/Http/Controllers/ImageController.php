@@ -13,7 +13,7 @@ class ImageController extends Controller
     public function index()
     {
         return view('images.image-form');
-    }
+    }   
 
     // Store Image
     public function storeImage(ImageUpdateRequest $request)
